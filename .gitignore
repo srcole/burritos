@@ -1,0 +1,6 @@
+# Ignore compiled py files
+*.pyc
+# Ignore Mac files
+*DS_Store*
+# Ignore notebook checkpoint files
+**/.ipynb_checkpoints
