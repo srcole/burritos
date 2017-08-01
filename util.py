@@ -37,9 +37,9 @@ def load_burritos(delete_unreliable=True, delete_nonSD=True,
     df = pd.read_csv(url)
 
     # Remove capitalization and excess spaces from location and reviewer
-    df.Location = df.Location.str.lower()
-    df.Location = df.Location.str.strip()
-    df.Reviewer = df.Reviewer.str.strip()
+    df.Location = df.Location.str.lower().str.strip()
+    df.Reviewer = df.Reviewer.str.lower().str.strip()
+    df.Burrito = df.Burrito.str.lower().str.strip()
 
     # Delete unreliable ratings
     if delete_unreliable:
@@ -48,6 +48,7 @@ def load_burritos(delete_unreliable=True, delete_nonSD=True,
     # Delete ratings outside of San Diego
     if delete_nonSD:
         df = df[(df.NonSD != 'x') & (df.NonSD != 'X')]
+    df.reset_index(drop=True, inplace=True)
 
     # Get restaurant info
     i_address = []
