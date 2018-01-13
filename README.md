@@ -1,3 +1,5 @@
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/srcole/burritos/master)
+
 # burritos
 Analysis of burritos across San Diego, outlined in the notebooks below.
 
